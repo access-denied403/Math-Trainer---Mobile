@@ -1,0 +1,62 @@
+<TextInput>:
+    foreground_color: 0.0, 0.0, 0.0, 1
+    font_size: 15
+    background_color: 0.3, 0.3, 0.3, 1
+
+<Button>:
+    background_color: 0.3, 0.3, 0.3, 1
+    font_size: 25
+
+<Label>:
+    color: 0.25, 0.25, 0.25, 1
+
+<Div_page>:
+    name: 'div'
+    label: "Subtraction"
+
+<Mul_page>:
+    name: 'mul'
+    label: "Multiplication"
+
+<Sub_page>:
+    name: 'sub'
+    label: "Subtraction"
+
+<Add_page>:
+    name: 'add'
+    label: "Addition"
+    
+
+<Home_page>:
+    name: 'home'
+    label: "Home"
+    GridLayout:
+        cols: 2
+        rows: 2
+        Button:
+            id: addition
+            text: 'Addition'
+            on_press:
+                root.addition()
+                root.manager.transition.direction = "up"
+        
+        Button:
+            id: subtraction
+            text: 'Subtraction'
+            on_press:
+                root.subtraction()
+                root.manager.transition.direction = "right"
+            
+        Button:
+            id: multiplication
+            text: 'Multiplication'
+            on_press:
+                root.multiplication()
+                root.manager.transition.direction = "down"
+
+        Button:
+            id: division
+            text: 'Division'
+            on_press:
+                root.division()
+                root.manager.transition.direction = "left"
