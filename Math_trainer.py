@@ -26,16 +26,20 @@ class Home_page(Screen):
         screen_manager.current = "div"
 
 class Add_page(Screen):
-    pass
+    def home(self):
+        screen_manager.current = "home"
 
 class Sub_page(Screen):
-    pass
+    def home(self):
+        screen_manager.current = "home"
 
 class Mul_page(Screen):
-    pass
+    def home(self):
+        screen_manager.current = "home"
 
 class Div_page(Screen):
-    pass
+    def home(self):
+        screen_manager.current = "home"
 
 
 graphics = Builder.load_file("Math_Trainer.kv")

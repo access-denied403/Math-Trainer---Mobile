@@ -10,22 +10,51 @@
 <Label>:
     color: 0.25, 0.25, 0.25, 1
 
+
 <Div_page>:
     name: 'div'
     label: "Subtraction"
+
+    Button:
+        id: home
+        text: 'Home'
+        on_press:
+            root.home()
+            root.manager.transition.direction = "up"
+
 
 <Mul_page>:
     name: 'mul'
     label: "Multiplication"
 
+    Button:
+        id: home
+        text: 'Home'
+        on_press:
+            root.home()
+            root.manager.transition.direction = "up"
+
 <Sub_page>:
     name: 'sub'
     label: "Subtraction"
+
+    Button:
+        id: home
+        text: 'Home'
+        on_press:
+            root.home()
+            root.manager.transition.direction = "up"
 
 <Add_page>:
     name: 'add'
     label: "Addition"
     
+    Button:
+        id: home
+        text: 'Home'
+        on_press:
+            root.home()
+            root.manager.transition.direction = "up"
 
 <Home_page>:
     name: 'home'
@@ -38,14 +67,14 @@
             text: 'Addition'
             on_press:
                 root.addition()
-                root.manager.transition.direction = "up"
+                root.manager.transition.direction = "down"
         
         Button:
             id: subtraction
             text: 'Subtraction'
             on_press:
                 root.subtraction()
-                root.manager.transition.direction = "right"
+                root.manager.transition.direction = "down"
             
         Button:
             id: multiplication
@@ -59,4 +88,4 @@
             text: 'Division'
             on_press:
                 root.division()
-                root.manager.transition.direction = "left"
+                root.manager.transition.direction = "down"
