@@ -13,52 +13,90 @@
 
 <Div_page>:
     name: 'div'
-    label: "Subtraction"
-
-    Button:
-        id: home
-        text: 'Home'
-        on_press:
-            root.home()
-            root.manager.transition.direction = "up"
+    GridLayout:
+        rows: 2
+        Button:
+            id: home
+            size_hint_y: 0.1
+            text: 'Home'
+            on_press:
+                root.home()
+                root.manager.transition.direction = "up"
+        Label:
+            text: "Subtraction"
 
 
 <Mul_page>:
     name: 'mul'
-    label: "Multiplication"
+    GridLayout:
+        rows: 2
+        Button:
+            id: home
+            size_hint_y: 0.1
+            text: 'Home'
+            on_press:
+                root.home()
+                root.manager.transition.direction = "up"
+        Label:
+            text: "Multiplication"
 
-    Button:
-        id: home
-        text: 'Home'
-        on_press:
-            root.home()
-            root.manager.transition.direction = "up"
 
 <Sub_page>:
     name: 'sub'
-    label: "Subtraction"
+    GridLayout:
+        rows: 2
+        Button:
+            id: home
+            size_hint_y: 0.1
+            text: 'Home'
+            on_press:
+                root.home()
+                root.manager.transition.direction = "up"
+        Label:
+            text: "Subtraction"
 
-    Button:
-        id: home
-        text: 'Home'
-        on_press:
-            root.home()
-            root.manager.transition.direction = "up"
 
 <Add_page>:
     name: 'add'
-    label: "Addition"
-    
-    Button:
-        id: home
-        text: 'Home'
-        on_press:
-            root.home()
-            root.manager.transition.direction = "up"
+    GridLayout:
+        rows: 2
+        Button:
+            id: home
+            size_hint_y: 0.1
+            text: 'Home'
+            on_press:
+                root.home()
+                root.manager.transition.direction = "up"
+        GridLayout:
+            rows: 2
+            GridLayout:
+                cols: 3
+                size_hint_y: 0.1
+                GridLayout:
+                    cols:2
+                    size_hint_x: 0.3
+                    Label:
+                        text: "Score:"
+                    Label:
+                        text: "--"
+                Label:
+                    text: ""
+                GridLayout:
+                    cols: 1
+                    Label:
+                        text: "Addition"
+                        font_size: 30
+
+            GridLayout:
+                cols: 2
+                Label:
+                    text: "col left"
+                Label:
+                    text: "col right"
+                    
 
 <Home_page>:
     name: 'home'
-    label: "Home"
     GridLayout:
         cols: 2
         rows: 2
