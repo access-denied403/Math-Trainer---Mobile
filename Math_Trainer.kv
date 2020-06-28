@@ -1,15 +1,5 @@
-<TextInput>:
-    foreground_color: 0.0, 0.0, 0.0, 1
-    font_size: 15
-    background_color: 0.3, 0.3, 0.3, 1
-
 <Button>:
-    background_color: 0.3, 0.3, 0.3, 1
-    font_size: 25
-
-<Label>:
-    color: 0.25, 0.25, 0.25, 1
-
+	font_size: 70
 
 <Div_page>:
     name: 'div'
@@ -58,15 +48,11 @@
 
 <Add_page>:
     name: 'add'
+    question: question
+    answer: answer
     GridLayout:
         rows: 2
-        Button:
-            id: home
-            size_hint_y: 0.1
-            text: 'Home'
-            on_press:
-                root.home()
-                root.manager.transition.direction = "up"
+                
         GridLayout:
             rows: 2
             GridLayout:
@@ -74,7 +60,6 @@
                 size_hint_y: 0.1
                 GridLayout:
                     cols:2
-                    size_hint_x: 0.3
                     Label:
                         text: "Score:"
                     Label:
@@ -85,14 +70,31 @@
                     cols: 1
                     Label:
                         text: "Addition"
-                        font_size: 30
+                        font_size: 70
 
             GridLayout:
-                cols: 2
+                rows: 2
                 Label:
-                    text: "col left"
-                Label:
-                    text: "col right"
+                    id: question
+                    text: "QUESTION"
+                GridLayout:
+                	rows: 2
+                	TextInput:
+                		id: answer
+                		multiline: False
+                		size_hint_y: 0.1
+                	Button:
+                	    id: submit
+                        text: "Submit"
+                        on_press:
+                        	root.submit()
+        Button:
+            id: home
+            size_hint_y: 0.1
+            text: 'Home'
+            on_press:
+                root.home()
+                root.manager.transition.direction = "up"
                     
 
 <Home_page>:
@@ -126,4 +128,3 @@
             text: 'Division'
             on_press:
                 root.division()
-                root.manager.transition.direction = "down"
