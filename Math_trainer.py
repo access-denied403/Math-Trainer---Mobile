@@ -1,7 +1,8 @@
 import kivy
+import random
 from kivy.app import App
 from kivy.lang import Builder
-from kivy.properties import ObjectProperty
+from kivy.properties import ObjectProperty, StringProperty
 from kivy.uix.label import Label
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.button import Button
@@ -10,7 +11,6 @@ from kivy.uix.widget import Widget
 from kivy.uix.popup import Popup
 from kivy.uix.screenmanager import ScreenManager, Screen
 kivy.require('1.11.1')
-# Window.clearcolor = (0.15, 0.15, 0.15, 1)
 
 class Home_page(Screen):
     def addition(self):
@@ -25,17 +25,27 @@ class Home_page(Screen):
     def division(self):
         screen_manager.current = "div"
 
+
 class Add_page(Screen):
+    answer = ObjectProperty(None)
+    question = ObjectProperty(None)
+    
+    def submit(self):
+    	self.question.text = "Clicked"
+    	
     def home(self):
         screen_manager.current = "home"
+
 
 class Sub_page(Screen):
     def home(self):
         screen_manager.current = "home"
 
+
 class Mul_page(Screen):
     def home(self):
         screen_manager.current = "home"
+
 
 class Div_page(Screen):
     def home(self):
@@ -50,6 +60,7 @@ for screen in screens:
     screen_manager.add_widget(screen)
 
 screen_manager.current = "home"
+
 
 class Math_trainer(App):
     def build(self):
