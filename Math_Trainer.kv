@@ -50,6 +50,7 @@
     name: 'add'
     question: question
     answer: answer
+    score: score
     GridLayout:
         rows: 2
                 
@@ -63,7 +64,8 @@
                     Label:
                         text: "Score:"
                     Label:
-                        text: "--"
+                        id: score
+                        text: "0"
                 Label:
                     text: ""
                 GridLayout:
@@ -76,7 +78,7 @@
                 rows: 2
                 Label:
                     id: question
-                    text: "QUESTION"
+                    text: root.question.text
                 GridLayout:
                 	rows: 2
                 	TextInput:
