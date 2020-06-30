@@ -33,21 +33,6 @@
 
 <Sub_page>:
     name: 'sub'
-    GridLayout:
-        rows: 2
-        Button:
-            id: home
-            size_hint_y: 0.1
-            text: 'Home'
-            on_press:
-                root.home()
-                root.manager.transition.direction = "up"
-        Label:
-            text: "Subtraction"
-
-
-<Add_page>:
-    name: 'add'
     question: question
     answer: answer
     score: score
@@ -68,6 +53,75 @@
                         text: "0"
                 Label:
                     text: ""
+                GridLayout:
+                    cols: 1
+                    Label:
+                        text: "Subtraction"
+                        font_size: 70
+
+            GridLayout:
+                rows: 2
+                Label:
+                    id: question
+                    text: root.question.text
+                GridLayout:
+                	rows: 2
+                	TextInput:
+                		id: answer
+                		multiline: False
+                		size_hint_y: 0.1
+                	Button:
+                	    id: submit
+                        text: "Submit"
+                        on_press:
+                        	root.submit()
+        Button:
+            id: home
+            size_hint_y: 0.1
+            text: 'Home'
+            on_press:
+                root.home()
+                root.manager.transition.direction = "up"
+
+
+<Add_page>:
+    name: 'add'
+    question: question
+    answer: answer
+    score: score
+    easy: easy
+    medium: medium
+    hard: hard
+    GridLayout:
+        rows: 2
+                
+        GridLayout:
+            rows: 2
+            GridLayout:
+                cols: 3
+                size_hint_y: 0.1
+                GridLayout:
+                    cols:2
+                    Label:
+                        text: "Score:"
+                    Label:
+                        id: score
+                        text: "0"
+                GridLayout:
+                    cols: 3
+                    CheckBox:
+                        text: "Easy"
+                        id: easy
+                        group: "difficulty"
+                        state: "down"
+                    CheckBox:
+                        text: "Medium"
+                        id: medium
+                        group: "difficulty"
+                    CheckBox:
+                        text: "Hard"
+                        id: hard
+                        group: "difficulty"
                 GridLayout:
                     cols: 1
                     Label:
